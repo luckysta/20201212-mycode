@@ -9,6 +9,6 @@ public class findCircleNum {
     }
 
     public int findCircleNum(int[][] isConnected) {
-
+        return 1;
     }
 }
