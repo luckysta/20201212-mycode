@@ -19,21 +19,13 @@ public class NumRescueBoats {
         int a = 0;
         int b = people.length-1;
         int boats = 0;
-        while (a != b && a < b){
+        while ( a <= b){
             if(people[b] + people[a]  <= limit){
-                if(b-a ==2){
-                    boats = boats +2;
-                }else {
                     boats++;
-                }
                 b--;
                 a++;
             }else {
-                if(b-a == 1){
-                    boats = boats+2;
-                }else {
                     boats++;
-                }
                 b--;
             }
         }
