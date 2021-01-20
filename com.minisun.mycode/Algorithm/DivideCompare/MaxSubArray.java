@@ -28,24 +28,23 @@ public class MaxSubArray {
             return nums[l];
         }
         //中间值
-        int m = l+(r-l)/2;
-        int max = mindSubArray(nums,l,m,r);
-        return Math.max(max,Math.max(maxSubArrayDivide(nums,l,m),maxSubArrayDivide(nums,m+1,r)));
+        int m = (l+r) >>>1;
+        return Math.max(maxSubArrayDivide(nums,l,m),Math.max(maxSubArrayDivide(nums,m+1,r), mindSubArray(nums,l,m,r)));
     }
 
     public static int mindSubArray(int[] nums,int l, int m,int r){
         int sum = 0;
-        int leftSum = Integer.MAX_VALUE;
+        int leftSum = Integer.MIN_VALUE;
         for (int i = m; i >= l; i--) {
-            sum = sum+nums[i];
+            sum += nums[i];
             if(sum>leftSum){
                 leftSum = sum;
             }
         }
         sum = 0;
-        int rightSum = Integer.MAX_VALUE;
+        int rightSum = Integer.MIN_VALUE;
         for (int i = m+1; i <=r; i++) {
-            sum = sum+nums[i];
+            sum +=nums[i];
             if(sum>rightSum){
                 rightSum = sum;
             }
