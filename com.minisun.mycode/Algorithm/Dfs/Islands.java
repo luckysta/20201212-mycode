@@ -2,7 +2,13 @@ package Algorithm.Dfs;
 
 public class Islands {
 
-    public int numIslands(char[][] grid) {
+    public static void main(String[] args) {
+        char[][] grid = {{'1','1','1','1','0'},{'1','1','0','1','0'},{'1','1','0','0','0'},{'0','0','0','0','0'}};
+        System.out.println(numIslands(grid));
+
+    }
+
+    public static int numIslands(char[][] grid) {
         if (grid == null || grid.length == 0) {
             return 0;
         }
@@ -22,7 +28,7 @@ public class Islands {
         return num_islands;
     }
 
-    public  void dfs(char[][] grid,int r,int c){
+    public  static void dfs(char[][] grid,int r,int c){
         int nr = grid.length;
         int nc = grid[0].length;
 
